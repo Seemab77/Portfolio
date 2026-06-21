@@ -1,20 +1,20 @@
 /* DESIGN SYSTEM & GLOBAL VARIABLES */
 :root {
-  /* Dark Theme variables (default) - Emerald Slate / Nordic Mint */
-  --bg: #0b1315; /* Deep Forest Slate */
-  --surface: #122023; /* Forest Slate Medium */
-  --card: #182c30; /* Dark Slate Green Card */
-  --card-hover: #203a3f; /* Medium Hover Green */
-  --accent: #34d399; /* Vibrant Mint Green */
-  --accent-rgb: 52, 211, 153;
-  --accent2: #a7f3d0; /* Soft Sage Accent */
-  --accent2-rgb: 167, 243, 208;
+  /* Dark Theme variables (default) - Navy Blue / Slate Cyber */
+  --bg: #0a1128; /* Deep Midnight Blue background */
+  --surface: #0f172a; /* Slightly lighter slate navy surface */
+  --card: #1e293b; /* Slate card */
+  --card-hover: #334155; /* Hover card */
+  --accent: #38bdf8; /* Vibrant cyan/sky blue */
+  --accent-rgb: 56, 189, 248;
+  --accent2: #818cf8; /* Indigo accent */
+  --accent2-rgb: 129, 140, 248;
   --gold: #f59e0b;
-  --text: #f0fdf4; /* Mint-tinted Off-White */
-  --muted: #819992; /* Sage Muted Green-Gray */
-  --border: #1f3439; /* Slate/Mint border */
-  --glow: rgba(52, 211, 153, 0.15);
-  --glow-accent2: rgba(167, 243, 208, 0.12);
+  --text: #f8fafc; /* Ice white/slate-tinted text */
+  --muted: #94a3b8; /* Slate gray muted text */
+  --border: #1e293b; /* Slate border */
+  --glow: rgba(56, 189, 248, 0.15);
+  --glow-accent2: rgba(129, 140, 248, 0.12);
   
   --font-main: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-heading: 'DM Serif Display', Georgia, serif;
@@ -23,22 +23,22 @@
   --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Light Theme overrides - Emerald Slate / Nordic Mint */
+/* Light Theme overrides - Navy Blue / Slate Cyber */
 [data-theme="light"] {
-  --bg: #f0fdf4; /* Very Light Mint Green */
-  --surface: #d1fae5; /* Soft Mint Surface */
-  --card: #ffffff; /* Pure White Card */
-  --card-hover: #e6fcf0; /* Soft Mint Hover */
-  --accent: #065f46; /* Deep Forest Green */
-  --accent-rgb: 6, 95, 70;
-  --accent2: #047857; /* Emerald Green */
-  --accent2-rgb: 4, 120, 87;
+  --bg: #f8fafc; /* Very light slate blue background */
+  --surface: #f1f5f9; /* Light slate surface */
+  --card: #ffffff; /* Pure white card */
+  --card-hover: #f8fafc; /* Very light card hover */
+  --accent: #0284c7; /* Sky blue accent */
+  --accent-rgb: 2, 132, 199;
+  --accent2: #4f46e5; /* Indigo accent */
+  --accent2-rgb: 79, 70, 229;
   --gold: #d97706;
-  --text: #064e3b; /* Very Dark Forest text */
-  --muted: #374151; /* Charcoal Muted text */
-  --border: #a7f3d0; /* Mint Green border */
-  --glow: rgba(6, 95, 70, 0.08);
-  --glow-accent2: rgba(4, 120, 87, 0.08);
+  --text: #0f172a; /* Dark slate text */
+  --muted: #475569; /* Slate gray muted text */
+  --border: #e2e8f0; /* Light gray border */
+  --glow: rgba(2, 132, 199, 0.08);
+  --glow-accent2: rgba(79, 70, 229, 0.08);
 }
 
 /* GLOBAL RESET & BASICS */
@@ -408,14 +408,15 @@ nav.scroll-scrolled {
 }
 
 /* ESP32 TERMINAL WIDGET */
+/* ESP32 TERMINAL WIDGET */
 .hero-widget {
-  background: rgba(10, 15, 30, 0.7);
+  background: rgba(10, 15, 30, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1.5px solid var(--border);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 20px var(--glow);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 20px rgba(56, 189, 248, 0.15);
   display: flex;
   flex-direction: column;
   height: 380px;
@@ -424,22 +425,22 @@ nav.scroll-scrolled {
 }
 
 .hero-widget:hover {
-  border-color: rgba(var(--accent-rgb), 0.4);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(var(--accent-rgb), 0.25);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(56, 189, 248, 0.25);
 }
 
 .terminal-header {
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(15, 23, 42, 0.95);
   padding: 0.75rem 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1.5px solid var(--border);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
 }
 
 .terminal-title {
   font-size: 0.78rem;
-  color: var(--muted);
+  color: #94a3b8;
 }
 
 .terminal-controls {
@@ -466,7 +467,7 @@ nav.scroll-scrolled {
   flex-direction: column;
   gap: 0.6rem;
   font-size: 0.82rem;
-  color: var(--text);
+  color: #f8fafc;
   scroll-behavior: smooth;
 }
 
@@ -477,11 +478,11 @@ nav.scroll-scrolled {
 }
 
 .t-prompt {
-  color: var(--accent2);
+  color: #818cf8;
 }
 
 .t-system {
-  color: var(--muted);
+  color: #64748b;
   font-style: italic;
 }
 
@@ -505,8 +506,8 @@ nav.scroll-scrolled {
   display: flex;
   align-items: center;
   padding: 0.75rem 1.25rem;
-  background: rgba(15, 23, 42, 0.7);
-  border-top: 1.5px solid var(--border);
+  background: rgba(15, 23, 42, 0.85);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.1);
 }
 
 .terminal-input-row input {
@@ -514,7 +515,7 @@ nav.scroll-scrolled {
   background: transparent;
   border: none;
   outline: none;
-  color: var(--accent);
+  color: #38bdf8;
   font-family: var(--font-mono);
   font-size: 0.85rem;
   margin-left: 0.5rem;
@@ -543,7 +544,6 @@ section {
   font-size: 1.05rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  text-align: justify;
 }
 
 .mv-cards {
@@ -1495,6 +1495,42 @@ section {
   font-size: 0.92rem;
 }
 
+/* HORIZONTAL CONTACT ROW styles */
+.info-row-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  background-color: var(--card);
+  transition: var(--transition);
+}
+
+.info-row-horizontal:hover {
+  transform: translateY(-4px);
+  background: rgba(var(--accent-rgb), 0.04);
+  border-color: var(--accent);
+  box-shadow: 0 4px 15px var(--glow);
+}
+
+.info-row-horizontal:hover .info-icon {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+.info-row-horizontal a,
+.info-row-horizontal span.info-text {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.2s;
+}
+
+.info-row-horizontal a:hover {
+  color: var(--accent);
+}
+
 /* FOOTER */
 footer {
   background-color: var(--bg);
@@ -1524,6 +1560,7 @@ footer p {
 .footer-icons {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
   margin: 1.5rem 0 2rem;
 }
@@ -1541,7 +1578,7 @@ footer p {
 
 .copyright {
   font-size: 0.8rem !important;
-  color: var(--border) !important;
+  color: var(--muted) !important;
   margin-top: 1.5rem;
 }
 

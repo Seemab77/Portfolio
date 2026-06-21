@@ -824,7 +824,7 @@ document.addEventListener('DOMContentLoaded', () => {
               addTerminalLine('Gathering status metrics... Done.', 't-system');
               const rssi = -45 - Math.floor(Math.random() * 15);
               const heap = 180 + Math.floor(Math.random() * 20);
-              addTerminalLine(`DEVICE_NAME: nust-seecs-node-04<br>` +
+              addTerminalLine(`DEVICE_NAME: seemab<br>` +
                 `WIFI_STATUS: Connected (RSSI: <span class="t-green">${rssi} dBm</span>)<br>` +
                 `CPU_TEMP:    <span class="t-amber">${(40 + Math.random()*5).toFixed(1)}°C</span><br>` +
                 `SYS_UPTIME:  82410 seconds (Active)<br>` +
@@ -1117,42 +1117,4 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape') closeModal();
     });
   }
-
-  // ==========================================
-  // 9. CONTACT FORM MAILTO REDIRECTION
-  // ==========================================
-  window.handleSend = function() {
-    const nameEl = document.getElementById('fname');
-    const emailEl = document.getElementById('femail');
-    const subjectEl = document.getElementById('fsubject');
-    const messageEl = document.getElementById('fmessage');
-    const feedbackEl = document.getElementById('formFeedback');
-    const formEl = document.getElementById('contactForm');
-    
-    if (!nameEl || !emailEl || !subjectEl || !messageEl) return;
-    
-    const name = nameEl.value;
-    const email = emailEl.value;
-    const subject = subjectEl.value;
-    const message = messageEl.value;
-    
-    if (!name || !email || !subject || !message) {
-      alert("Please fill out all required fields.");
-      return;
-    }
-    
-    if (feedbackEl) feedbackEl.style.display = 'block';
-    
-    setTimeout(() => {
-      const emailRecipient = "seemab.ramzan@gmail.com";
-      const emailSubject = encodeURIComponent(`[Portfolio Contact] ${subject}`);
-      const emailBodyStr = `Hello Seemab,\n\nYou have received a message from your portfolio contact form:\n\nSender Name: ${name}\nSender Email: ${email}\n\nMessage:\n${message}\n\n---\nSent from Portfolio Website.`;
-      const emailBody = encodeURIComponent(emailBodyStr);
-      
-      window.location.href = `mailto:${emailRecipient}?subject=${emailSubject}&body=${emailBody}`;
-      
-      if (formEl) formEl.reset();
-      if (feedbackEl) feedbackEl.style.display = 'none';
-    }, 1500);
-  };
 });
