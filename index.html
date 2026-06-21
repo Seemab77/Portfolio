@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seemab Ramzan — Electrical Engineer | Home</title>
+  <meta name="description" content="Portfolio of Seemab Ramzan, graduate Electrical Engineer from NUST. Specializing in Embedded Systems, IoT networks, and Machine Learning applications."/>
+  <meta name="keywords" content="Seemab Ramzan, Electrical Engineer, NUST, IoT, ESP32, Embedded Systems, Machine Learning, Portfolio"/>
+  <meta name="author" content="Seemab Ramzan"/>
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Seemab Ramzan — Electrical Engineer"/>
+  <meta property="og:description" content="Exploring the intersection of hardware and intelligence — Embedded Systems, IoT networks, and Machine Learning."/>
+  <meta property="og:type" content="website"/>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- Custom Cursor & Glow Backgrounds -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="glow-bg-radial"></div>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <div class="logo" onclick="window.location.href='index.html'">SR<span>.</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="fyp.html">Final Year Project</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">⚡</button>
+      <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <!-- Canvas for live interactive wave -->
+    <canvas id="waveCanvas"></canvas>
+    
+    <div class="hero-bg"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">⚡ Embedded Systems · IoT · Machine Learning</p>
+        <h1>Seemab<br><span class="accent-text">Ramzan</span></h1>
+        <p class="hero-designations">B.E. Electrical Engineering (NUST) · Embedded Systems · AI & IoT</p>
+        <p class="hero-intro">
+          A graduate Electrical Engineer from NUST bridging the gap between hardware and intelligence — from ESP32-powered sensor networks to ML-driven healthcare devices. Ready to engineer the next generation of intelligent, connected solutions.
+        </p>
+        <div class="cta-group">
+          <a href="projects.html" class="btn-primary">Explore Projects</a>
+          <a href="contact.html" class="btn-outline">Get In Touch</a>
+        </div>
+        <div class="social-icons">
+          <a href="https://github.com/seemab" target="_blank" rel="noopener noreferrer">⬡ GitHub</a>
+          <a href="https://linkedin.com/in/SeemabRamzan" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
+          <a href="mailto:seemab.ramzan@gmail.com">✉ Email</a>
+        </div>
+      </div>
+      
+      <!-- Interactive Terminal Simulator -->
+      <div class="hero-widget">
+        <div class="terminal-header">
+          <span class="terminal-title">esp32-terminal-v1.4.0.sh</span>
+          <div class="terminal-controls">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <div class="terminal-line"><span class="t-prompt">SR-ESP32 ~ $</span> boot --device nust-iot-node</div>
+          <div class="terminal-line t-system">Booting NUST SEECS Node... [OK]</div>
+          <div class="terminal-line t-system">Connecting to MQTT Broker... Connected.</div>
+          <div class="terminal-line t-system">Initializing IR spectroscopy ML module... Loaded.</div>
+          <div class="terminal-line"><span class="t-prompt">SR-ESP32 ~ $</span> help</div>
+          <div class="terminal-line t-output">Available commands: <strong>status</strong>, <strong>sensors</strong>, <strong>run-ml</strong>, <strong>sysinfo</strong>, <strong>clear</strong></div>
+        </div>
+        <div class="terminal-input-row">
+          <span class="t-prompt">SR-ESP32 ~ $</span>
+          <input type="text" id="terminalInput" placeholder="type a command..." autocomplete="off" spellcheck="false"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN SECTIONS -->
+  <main>
+    <!-- ABOUT SUMMARY SECTION -->
+    <section id="about-summary" style="border-top: 1.5px solid var(--border); border-bottom: 1.5px solid var(--border);">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-info">
+            <p class="section-label">Brief Background</p>
+            <h2 class="section-title">Bridging Hardware & Intelligence</h2>
+            <div class="about-text">
+              <p>I'm Seemab Ramzan, a graduate Electrical Engineer from the National University of Science & Technology (NUST), Islamabad. My engineering focuses on embedded networks, real-time firmware, and machine learning integration.</p>
+              <p>With research experience in IoT communication protocols at NUST SEECS labs and industrial training at Korea EHT in Seoul, I build connected systems designed for real-world reliability.</p>
+            </div>
+            <a href="about.html" class="btn-outline" style="margin-top: 1rem; display: inline-block; width: fit-content;">Read Full Background & Exp →</a>
+          </div>
+          <div class="about-illustration">
+            <div class="about-avatar" style="box-shadow: 0 0 25px rgba(var(--accent-rgb), 0.15);">
+              <img src="Seemab.jpeg?v=6" alt="Seemab Ramzan" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;"/>
+            </div>
+            <p class="avatar-title">B.E. Electrical Engineering</p>
+            <p class="avatar-subtitle">NUST Islamabad · Class of 2026</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS GLIMPSE SECTION -->
+    <section id="skills-glimpse" style="background-color: var(--surface); border-bottom: 1.5px solid var(--border); padding: 5rem 0;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3.5rem;">
+          <p class="section-label">Core Capabilities</p>
+          <h2 class="section-title">Engineering & Developer <span class="accent-text">Toolkit</span></h2>
+          <p class="section-sub">A high-level overview of my expertise spanning hardware design, intelligent algorithms, and modern web platforms.</p>
+        </div>
+        
+        <div class="skills-glimpse-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+          <!-- Card 1 -->
+          <div class="glimpse-card" style="background: var(--card); border: 1.5px solid var(--border); border-radius: 8px; padding: 2rem; transition: var(--transition); position: relative; overflow: hidden; box-shadow: 0 4px 20px var(--glow);">
+            <div style="font-size: 2.25rem; margin-bottom: 1.25rem;">⚡</div>
+            <h3 style="font-size: 1.25rem; font-family: var(--font-heading); margin-bottom: 0.75rem;">Embedded & Hardware</h3>
+            <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">Designing real-time firmware, RTL digital logic design, and low-power hardware systems.</p>
+            <div class="tech-tags" style="gap: 0.5rem;">
+              <span class="tech-tag">ESP32</span>
+              <span class="tech-tag">Arduino</span>
+              <span class="tech-tag">Embedded C/C++</span>
+              <span class="tech-tag">Verilog</span>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="glimpse-card" style="background: var(--card); border: 1.5px solid var(--border); border-radius: 8px; padding: 2rem; transition: var(--transition); position: relative; overflow: hidden; box-shadow: 0 4px 20px var(--glow);">
+            <div style="font-size: 2.25rem; margin-bottom: 1.25rem;">🤖</div>
+            <h3 style="font-size: 1.25rem; font-family: var(--font-heading); margin-bottom: 0.75rem;">AI & Machine Learning</h3>
+            <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">Building predictive classifiers, computer vision pipelines, and deep neural models.</p>
+            <div class="tech-tags" style="gap: 0.5rem;">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">Scikit-learn</span>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="glimpse-card" style="background: var(--card); border: 1.5px solid var(--border); border-radius: 8px; padding: 2rem; transition: var(--transition); position: relative; overflow: hidden; box-shadow: 0 4px 20px var(--glow);">
+            <div style="font-size: 2.25rem; margin-bottom: 1.25rem;">📡</div>
+            <h3 style="font-size: 1.25rem; font-family: var(--font-heading); margin-bottom: 0.75rem;">IoT & Communications</h3>
+            <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">Developing network telemetry protocols, sensor grids, and wireless link simulations.</p>
+            <div class="tech-tags" style="gap: 0.5rem;">
+              <span class="tech-tag">MQTT</span>
+              <span class="tech-tag">BLE/WiFi</span>
+              <span class="tech-tag">MATLAB</span>
+              <span class="tech-tag">Simulink</span>
+            </div>
+          </div>
+          
+          <!-- Card 4 -->
+          <div class="glimpse-card" style="background: var(--card); border: 1.5px solid var(--border); border-radius: 8px; padding: 2rem; transition: var(--transition); position: relative; overflow: hidden; box-shadow: 0 4px 20px var(--glow);">
+            <div style="font-size: 2.25rem; margin-bottom: 1.25rem;">💻</div>
+            <h3 style="font-size: 1.25rem; font-family: var(--font-heading); margin-bottom: 0.75rem;">Web Development</h3>
+            <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">Constructing interactive full-stack dashboards, video platforms, and AI chat interfaces.</p>
+            <div class="tech-tags" style="gap: 0.5rem;">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Vite</span>
+              <span class="tech-tag">HTML5/CSS3</span>
+            </div>
+          </div>
+        </div>
+        
+        <div style="text-align: center;">
+          <a href="skills.html" class="btn-primary">View Detailed Proficiency & Tooling →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="logo">SR</span>
+    <p>Seemab Ramzan · Electrical Engineer</p>
+    <p class="footer-quote">"Engineering intelligence into every system."</p>
+    <div class="footer-icons">
+      <a href="https://github.com/seemab" target="_blank" rel="noopener noreferrer">⬡ GitHub</a>
+      <a href="https://linkedin.com/in/SeemabRamzan" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
+      <a href="mailto:seemab.ramzan@gmail.com">✉ Email</a>
+    </div>
+    <p class="copyright">&copy; 2026 Seemab Ramzan. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Custom JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>

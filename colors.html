@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Theme Showcase & Color Swatches</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-light: #f8fafc;
+      --text-dark: #f8fafc;
+      --text-light: #0f172a;
+      --card-bg-dark: #1e293b;
+      --card-border-dark: #334155;
+      
+      /* Theme 1: Navy Blue + White + Gray */
+      --theme1-bg-dark: #0a1128;
+      --theme1-surface-dark: #172a53;
+      --theme1-accent-dark: #38bdf8;
+      --theme1-text-dark: #f8fafc;
+      --theme1-muted-dark: #94a3b8;
+      --theme1-border-dark: #1e293b;
+      
+      --theme1-bg-light: #f8fafc;
+      --theme1-surface-light: #ffffff;
+      --theme1-accent-light: #0284c7;
+      --theme1-text-light: #0f172a;
+      --theme1-muted-light: #64748b;
+      --theme1-border-light: #e2e8f0;
+
+      /* Theme 2: Emerald Slate + Nordic Mint */
+      --theme2-bg-dark: #0b1315;
+      --theme2-surface-dark: #122023;
+      --theme2-accent-dark: #34d399;
+      --theme2-text-dark: #f0fdf4;
+      --theme2-muted-dark: #819992;
+      --theme2-border-dark: #1f3439;
+      
+      --theme2-bg-light: #f0fdf4;
+      --theme2-surface-light: #d1fae5;
+      --theme2-accent-light: #065f46;
+      --theme2-text-light: #064e3b;
+      --theme2-muted-light: #374151;
+      --theme2-border-light: #a7f3d0;
+
+      /* Theme 3: Cyberpunk Synthwave */
+      --theme3-bg-dark: #030712;
+      --theme3-surface-dark: #111827;
+      --theme3-accent-dark: #00e5ff;
+      --theme3-text-dark: #f8fafc;
+      --theme3-muted-dark: #9ca3af;
+      --theme3-border-dark: #1f2937;
+      
+      --theme3-bg-light: #faf5ff;
+      --theme3-surface-light: #f3e8ff;
+      --theme3-accent-light: #7c3aed;
+      --theme3-text-light: #1f2937;
+      --theme3-muted-light: #6b7280;
+      --theme3-border-light: #e9d5ff;
+
+      /* Theme 4: Obsidian + Gold */
+      --theme4-bg-dark: #0f0f10;
+      --theme4-surface-dark: #1a1a1c;
+      --theme4-accent-dark: #f59e0b;
+      --theme4-text-dark: #fbfbfd;
+      --theme4-muted-dark: #78716c;
+      --theme4-border-dark: #2b2b2d;
+      
+      --theme4-bg-light: #faf9f6;
+      --theme4-surface-light: #ffffff;
+      --theme4-accent-light: #b45309;
+      --theme4-text-light: #1c1917;
+      --theme4-muted-light: #78716c;
+      --theme4-border-light: #e7e5e4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+      font-family: 'Inter', sans-serif;
+      padding: 3rem 1.5rem;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #38bdf8, #34d399, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      color: #f8fafc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    /* THEME CARD */
+    .theme-card {
+      background-color: var(--card-bg-dark);
+      border: 1px solid var(--card-border-dark);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .theme-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--accent-color, #38bdf8);
+    }
+
+    .theme-card.theme-1::before { background: var(--theme1-accent-dark); }
+    .theme-card.theme-2::before { background: var(--theme2-accent-dark); }
+    .theme-card.theme-3::before { background: linear-gradient(90deg, var(--theme3-accent-dark), #8b5cf6); }
+    .theme-card.theme-4::before { background: var(--theme4-accent-dark); }
+
+    .theme-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .theme-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .theme-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 0.5rem;
+    }
+
+    .theme-desc {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      min-height: 44px;
+    }
+
+    /* PALETTE DISPLAY */
+    .swatch-group {
+      margin-bottom: 2rem;
+    }
+
+    .swatch-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #cbd5e1;
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .swatches {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .swatch {
+      flex: 1;
+      height: 60px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 6px;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 500;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+      transition: transform 0.2s ease;
+    }
+
+    .swatch:hover {
+      transform: scale(1.08);
+      z-index: 10;
+    }
+
+    .swatch span {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1px 4px;
+      border-radius: 4px;
+    }
+
+    /* MINI PREVIEW BOX */
+    .preview-box {
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: auto;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+    }
+
+    .preview-mode-toggle {
+      display: flex;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 3px;
+      margin-bottom: 1.25rem;
+      width: 100%;
+    }
+
+    .preview-mode-toggle button {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      padding: 0.4rem 0;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .preview-mode-toggle button.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #f8fafc;
+    }
+
+    /* MOCK COMPONENTS IN PREVIEW */
+    .mock-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--p-border);
+    }
+    
+    .mock-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--p-accent);
+    }
+
+    .mock-nav-links {
+      display: flex;
+      gap: 8px;
+      font-size: 0.7rem;
+      color: var(--p-muted);
+    }
+
+    .mock-nav-link.active {
+      color: var(--p-accent);
+      font-weight: 600;
+    }
+
+    .mock-hero {
+      margin: 0.5rem 0;
+    }
+
+    .mock-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--p-accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .mock-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--p-text);
+      line-height: 1.2;
+    }
+
+    .mock-body {
+      font-size: 0.75rem;
+      color: var(--p-muted);
+    }
+
+    .mock-card {
+      background: var(--p-surface);
+      border: 1px solid var(--p-border);
+      border-radius: 8px;
+      padding: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .mock-card:hover {
+      border-color: var(--p-accent);
+    }
+
+    .mock-card-title {
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--p-text);
+      margin-bottom: 0.25rem;
+    }
+
+    .mock-card-desc {
+      font-size: 0.7rem;
+      color: var(--p-muted);
+    }
+
+    .mock-buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 0.25rem;
+    }
+
+    .mock-btn {
+      flex: 1;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .mock-btn-primary {
+      background: var(--p-accent);
+      color: #ffffff;
+      border: none;
+    }
+
+    .mock-btn-outline {
+      background: transparent;
+      color: var(--p-text);
+      border: 1px solid var(--p-border);
+    }
+
+    /* THEME PREVIEW STYLES */
+    /* Theme 1 Dark */
+    .preview-t1-dark {
+      background-color: var(--theme1-bg-dark);
+      --p-accent: var(--theme1-accent-dark);
+      --p-text: var(--theme1-text-dark);
+      --p-muted: var(--theme1-muted-dark);
+      --p-border: var(--theme1-border-dark);
+      --p-surface: var(--theme1-surface-dark);
+    }
+    /* Theme 1 Light */
+    .preview-t1-light {
+      background-color: var(--theme1-bg-light);
+      --p-accent: var(--theme1-accent-light);
+      --p-text: var(--theme1-text-light);
+      --p-muted: var(--theme1-muted-light);
+      --p-border: var(--theme1-border-light);
+      --p-surface: var(--theme1-surface-light);
+    }
+
+    /* Theme 2 Dark */
+    .preview-t2-dark {
+      background-color: var(--theme2-bg-dark);
+      --p-accent: var(--theme2-accent-dark);
+      --p-text: var(--theme2-text-dark);
+      --p-muted: var(--theme2-muted-dark);
+      --p-border: var(--theme2-border-dark);
+      --p-surface: var(--theme2-surface-dark);
+    }
+    /* Theme 2 Light */
+    .preview-t2-light {
+      background-color: var(--theme2-bg-light);
+      --p-accent: var(--theme2-accent-light);
+      --p-text: var(--theme2-text-light);
+      --p-muted: var(--theme2-muted-light);
+      --p-border: var(--theme2-border-light);
+      --p-surface: var(--theme2-surface-light);
+    }
+
+    /* Theme 3 Dark */
+    .preview-t3-dark {
+      background-color: var(--theme3-bg-dark);
+      --p-accent: var(--theme3-accent-dark);
+      --p-text: var(--theme3-text-dark);
+      --p-muted: var(--theme3-muted-dark);
+      --p-border: var(--theme3-border-dark);
+      --p-surface: var(--theme3-surface-dark);
+    }
+    /* Theme 3 Light */
+    .preview-t3-light {
+      background-color: var(--theme3-bg-light);
+      --p-accent: var(--theme3-accent-light);
+      --p-text: var(--theme3-text-light);
+      --p-muted: var(--theme3-muted-light);
+      --p-border: var(--theme3-border-light);
+      --p-surface: var(--theme3-surface-light);
+    }
+
+    /* Theme 4 Dark */
+    .preview-t4-dark {
+      background-color: var(--theme4-bg-dark);
+      --p-accent: var(--theme4-accent-dark);
+      --p-text: var(--theme4-text-dark);
+      --p-muted: var(--theme4-muted-dark);
+      --p-border: var(--theme4-border-dark);
+      --p-surface: var(--theme4-surface-dark);
+    }
+    /* Theme 4 Light */
+    .preview-t4-light {
+      background-color: var(--theme4-bg-light);
+      --p-accent: var(--theme4-accent-light);
+      --p-text: var(--theme4-text-light);
+      --p-muted: var(--theme4-muted-light);
+      --p-border: var(--theme4-border-light);
+      --p-surface: var(--theme4-surface-light);
+    }
+
+    /* ACTION BAR */
+    .action-bar {
+      margin-top: 3rem;
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid #334155;
+      padding: 2rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    }
+
+    .action-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 0.5rem;
+    }
+
+    .action-desc {
+      font-size: 1rem;
+      color: #94a3b8;
+      margin-bottom: 1.5rem;
+    }
+
+    .selection-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .select-theme-btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .select-theme-btn.t1 { background: var(--theme1-accent-dark); color: #0a1128; }
+    .select-theme-btn.t2 { background: var(--theme2-accent-dark); color: #0b1315; }
+    .select-theme-btn.t3 { background: var(--theme3-accent-dark); color: #030712; }
+    .select-theme-btn.t4 { background: var(--theme4-accent-dark); color: #0f0f10; }
+
+    .select-theme-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Portfolio Color Themes Swatches</h1>
+      <p class="subtitle">Explore the 4 high-fidelity design themes designed for your professional portfolio. Toggle dark & light mockups in the interactive preview panel below.</p>
+      <a href="index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Portfolio
+      </a>
+    </header>
+
+    <div class="grid">
+      
+      <!-- THEME 1 -->
+      <div class="theme-card theme-1">
+        <div class="theme-header">
+          <h2 class="theme-title">Theme 1: Navy Corporate</h2>
+          <p class="theme-desc">Clean, corporate, professional, and reliable. Ideal for formal tech and enterprise backgrounds.</p>
+        </div>
+
+        <div class="swatch-group">
+          <div class="swatch-title">Dark Mode Colors</div>
+          <div class="swatches">
+            <div class="swatch" style="background-color: #0a1128;"><span>#0a1128</span></div>
+            <div class="swatch" style="background-color: #172a53;"><span>#172a53</span></div>
+            <div class="swatch" style="background-color: #38bdf8; color: #0f172a;"><span>#38bdf8</span></div>
+            <div class="swatch" style="background-color: #f8fafc; color: #0f172a;"><span>#f8fafc</span></div>
+          </div>
+          
+          <div class="swatch-title">Light Mode Colors</div>
+          <div class="swatches">
+            <div class="swatch" style="background-color: #f8fafc; color: #0f172a;"><span>#f8fafc</span></div>
+            <div class="swatch" style="background-color: #ffffff; color: #0f172a;"><span>#ffffff</span></div>
+            <div class="swatch" style="background-color: #0284c7;"><span>#0284c7</span></div>
+            <div class="swatch" style="background-color: #0f172a;"><span>#0f172a</span></div>
+          </div>
+        </div>
+
+        <div class="preview-mode-toggle" id="toggle-t1">
+          <button class="active" onclick="toggleThemePreview(1, 'dark')">Dark Preview</button>
+          <button onclick="toggleThemePreview(1, 'light')">Light Preview</button>
+        </div>
+
+        <div class="preview-box preview-t1-dark" id="preview-t1">
+          <div class="mock-nav">
+            <span class="mock-logo">Portfolio</span>
+            <div class="mock-nav-links">
+              <span class="mock-nav-link active">Home</span>
+              <span>About</span>
+              <span>Work</span>
+            </div>
+          </div>
+          <div class="mock-hero">
+            <span class="mock-badge">Available for Hire</span>
+            <h3 class="mock-title">Innovative Developer</h3>
+          </div>
+          <div class="mock-card">
+            <h4 class="mock-card-title">Featured Project</h4>
+            <p class="mock-card-desc">React, Node.js, Cloud Solutions.</p>
+          </div>
+          <div class="mock-buttons">
+            <button class="mock-btn mock-btn-primary">Get In Touch</button>
+            <button class="mock-btn mock-btn-outline">View Resume</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- THEME 2 -->
+      <div class="theme-card theme-2">
+        <div class="theme-header">
+          <h2 class="theme-title">Theme 2: Emerald Slate</h2>
+          <p class="theme-desc">Organic, logical, systems-focused, and premium. A contemporary slate green with fresh mint highlights.</p>
+        </div>
+
+        <div class="swatch-group">
+          <div class="swatch-title">Dark Mode Colors</div>
+          <div class="swatches">
+            <div class="swatch" style="background-color: #0b1315;"><span>#0b1315</span></div>
+            <div class="swatch" style="background-color: #122023;"><span>#122023</span></div>
+            <div class="swatch" style="background-color: #34d399; color: #0f172a;"><span>#34d399</span></div>
+            <div class="swatch" style="background-color: #f0fdf4; color: #0f172a;"><span>#f0fdf4</span></div>
+          </div>
+          
+          <div class="swatch-title">Light Mode Colors</div>
+          <div class="swatches">
+            <div class="swatch" style="background-color: #f0fdf4; color: #0f172a;"><span>#f0fdf4</span></div>
+            <div class="swatch" style="background-color: #d1fae5; color: #0f172a;"><span>#d1fae5</span></div>
+            <div class="swatch" style="background-color: #065f46;"><span>#065f46</span></div>
+            <div class="swatch" style="background-color: #064e3b;"><span>#064e3b</span></div>
+          </div>
+        </div>
+
+        <div class="preview-mode-toggle" id="toggle-t2">
+          <button class="active" onclick="toggleThemePreview(2, 'dark')">Dark Preview</button>
+          <button onclick="toggleThemePreview(2, 'light')">Light Preview</button>
+        </div>
+
+        <div class="preview-box preview-t2-dark" id="preview-t2">
+          <div class="mock-nav">
+            <span class="mock-logo">Portfolio</span>
+            <div class="mock-nav-links">
+              <span class="mock-nav-link active">Home</span>
+              <span>About</span>
+              <span>Work</span>
+            </div>
+          </div>
+          <div class="mock-hero">
+            <span class="mock-badge">Available for Hire</span>
+            <h3 class="mock-title">Innovative Developer</h3>
+          </div>
+          <div class="mock-card">
+            <h4 class="mock-card-title">Featured Project</h4>
+            <p class="mock-card-desc">React, Node.js, Cloud Solutions.</p>
+          </div>
+          <div class="mock-buttons">
+            <button class="mock-btn mock-btn-primary">Get In Touch</button>
+            <button class="mock-btn mock-btn-outline">View Resume</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- THEME 3 -->
+      <div class="theme-card theme-3">
+        <div class="theme-header">
+          <h2 class="theme-title">Theme 3: Cyberpunk Synth</h2>
+          <p class="theme-desc">High-tech, digital circuits, electric and energetic. Uses vivid neon cyan and purple accents.</p>
+        </div>
+
+        <div class="swatch-group">
+          <div class="swatch-title">Dark Mode Colors</div>
+          <div class="swatches">
+            <div class="swatch" style="background-color: #030712;"><span>#030712</span></div>
+            <div class="swatch" style="background-color: #111827;"><span>#111827</span></div>
+            <div class="swatch" style="background-color: #00e5ff; color: #0f172a;"><span>#00e5ff</span></div>
+            <div class="swatch" style="background-color: #f8fafc; color: #0f172a;"><span>#f8fafc</span></div>
+          </div>
+          
+          <div class="swatch-title">Light Mode Colors</div>
+          <div class="swatches">
+            <div class="swatch" style="background-color: #faf5ff; color: #0f172a;"><span>#faf5ff</span></div>
+            <div class="swatch" style="background-color: #f3e8ff; color: #0f172a;"><span>#f3e8ff</span></div>
+            <div class="swatch" style="background-color: #7c3aed;"><span>#7c3aed</span></div>
+            <div class="swatch" style="background-color: #1f2937;"><span>#1f2937</span></div>
+          </div>
+        </div>
+
+        <div class="preview-mode-toggle" id="toggle-t3">
+          <button class="active" onclick="toggleThemePreview(3, 'dark')">Dark Preview</button>
+          <button onclick="toggleThemePreview(3, 'light')">Light Preview</button>
+        </div>
+
+        <div class="preview-box preview-t3-dark" id="preview-t3">
+          <div class="mock-nav">
+            <span class="mock-logo">Portfolio</span>
+            <div class="mock-nav-links">
+              <span class="mock-nav-link active">Home</span>
+              <span>About</span>
+              <span>Work</span>
+            </div>
+          </div>
+          <div class="mock-hero">
+            <span class="mock-badge">Available for Hire</span>
+            <h3 class="mock-title">Innovative Developer</h3>
+          </div>
+          <div class="mock-card">
+            <h4 class="mock-card-title">Featured Project</h4>
+            <p class="mock-card-desc">React, Node.js, Cloud Solutions.</p>
+          </div>
+          <div class="mock-buttons">
+            <button class="mock-btn mock-btn-primary">Get In Touch</button>
+            <button class="mock-btn mock-btn-outline">View Resume</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- THEME 4 -->
+      <div class="theme-card theme-4">
+        <div class="theme-header">
+          <h2 class="theme-title">Theme 4: Obsidian & Gold</h2>
+          <p class="theme-desc">Luxurious, minimal, precise, and high-end. Rich champagne gold and warm deep charcoal slate.</p>
+        </div>
+
+        <div class="swatch-group">
+          <div class="swatch-title">Dark Mode Colors</div>
+          <div class="swatches">
+            <div class="swatch" style="background-color: #0f0f10;"><span>#0f0f10</span></div>
+            <div class="swatch" style="background-color: #1a1a1c;"><span>#1a1a1c</span></div>
+            <div class="swatch" style="background-color: #f59e0b; color: #0f172a;"><span>#f59e0b</span></div>
+            <div class="swatch" style="background-color: #fbfbfd; color: #0f172a;"><span>#fbfbfd</span></div>
+          </div>
+          
+          <div class="swatch-title">Light Mode Colors</div>
+          <div class="swatches">
+            <div class="swatch" style="background-color: #faf9f6; color: #0f172a;"><span>#faf9f6</span></div>
+            <div class="swatch" style="background-color: #ffffff; color: #0f172a;"><span>#ffffff</span></div>
+            <div class="swatch" style="background-color: #b45309;"><span>#b45309</span></div>
+            <div class="swatch" style="background-color: #1c1917;"><span>#1c1917</span></div>
+          </div>
+        </div>
+
+        <div class="preview-mode-toggle" id="toggle-t4">
+          <button class="active" onclick="toggleThemePreview(4, 'dark')">Dark Preview</button>
+          <button onclick="toggleThemePreview(4, 'light')">Light Preview</button>
+        </div>
+
+        <div class="preview-box preview-t4-dark" id="preview-t4">
+          <div class="mock-nav">
+            <span class="mock-logo">Portfolio</span>
+            <div class="mock-nav-links">
+              <span class="mock-nav-link active">Home</span>
+              <span>About</span>
+              <span>Work</span>
+            </div>
+          </div>
+          <div class="mock-hero">
+            <span class="mock-badge">Available for Hire</span>
+            <h3 class="mock-title">Innovative Developer</h3>
+          </div>
+          <div class="mock-card">
+            <h4 class="mock-card-title">Featured Project</h4>
+            <p class="mock-card-desc">React, Node.js, Cloud Solutions.</p>
+          </div>
+          <div class="mock-buttons">
+            <button class="mock-btn mock-btn-primary">Get In Touch</button>
+            <button class="mock-btn mock-btn-outline">View Resume</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="action-bar">
+      <h3 class="action-title">Ready to select a new theme?</h3>
+      <p class="action-desc">Click one of the themes below to trigger it on the live portfolio workspace.</p>
+      <div class="selection-buttons">
+        <button class="select-theme-btn t1" onclick="applyTheme(1)">Select Theme 1: Navy Corporate</button>
+        <button class="select-theme-btn t2" onclick="applyTheme(2)">Select Theme 2: Emerald Slate</button>
+        <button class="select-theme-btn t3" onclick="applyTheme(3)">Select Theme 3: Cyberpunk Synth</button>
+        <button class="select-theme-btn t4" onclick="applyTheme(4)">Select Theme 4: Obsidian Gold</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleThemePreview(themeNum, mode) {
+      const preview = document.getElementById('preview-t' + themeNum);
+      const toggleGroup = document.getElementById('toggle-t' + themeNum);
+      const buttons = toggleGroup.querySelectorAll('button');
+
+      // Update active button styling
+      buttons.forEach(btn => btn.classList.remove('active'));
+      if (mode === 'dark') {
+        buttons[0].classList.add('active');
+        preview.className = `preview-box preview-t${themeNum}-dark`;
+      } else {
+        buttons[1].classList.add('active');
+        preview.className = `preview-box preview-t${themeNum}-light`;
+      }
+    }
+
+    function applyTheme(themeNum) {
+      // In a real setup, we would run a command to apply this color palette.
+      // We will print a message advising the user to type the selection in chat.
+      alert('You have chosen Theme ' + themeNum + '! Please tell me in the chat and I will apply it globally to all pages of your portfolio.');
+    }
+  </script>
+</body>
+</html>

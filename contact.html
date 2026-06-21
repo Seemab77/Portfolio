@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seemab Ramzan — Electrical Engineer | Contact</title>
+  <meta name="description" content="Get in touch with Seemab Ramzan for engineering collaborations, research projects, or job opportunities."/>
+  <meta name="keywords" content="Seemab Ramzan, Contact, Email, LinkedIn, GitHub, NUST, Hire Electrical Engineer"/>
+  <meta name="author" content="Seemab Ramzan"/>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- Custom Cursor & Glow Backgrounds -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="glow-bg-radial"></div>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <div class="logo" onclick="window.location.href='index.html'">SR<span>.</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="fyp.html">Final Year Project</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">⚡</button>
+      <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <div class="container">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">Let's Build Something Together</h2>
+        <p class="section-sub">Open to full-time roles, research collaborations, and engineering opportunities. Reach out — I'd love to connect.</p>
+        
+        <div class="contact-grid">
+          <form class="contact-form" id="contactForm" onsubmit="event.preventDefault(); handleSend();">
+            <h3 class="form-title">Send Me a Message</h3>
+            <div class="field-wrap">
+              <input type="text" placeholder=" " id="fname" required/>
+              <label for="fname">Full Name</label>
+            </div>
+            <div class="field-wrap">
+              <input type="email" placeholder=" " id="femail" required/>
+              <label for="femail">Email Address</label>
+            </div>
+            <div class="field-wrap">
+              <input type="text" placeholder=" " id="fsubject" required/>
+              <label for="fsubject">Subject</label>
+            </div>
+            <div class="field-wrap">
+              <textarea placeholder=" " id="fmessage" required></textarea>
+              <label for="fmessage">Message</label>
+            </div>
+            <button type="submit" class="btn-send">Send Message →</button>
+            <div class="form-feedback" id="formFeedback">Message draft prepared! Redirecting to email...</div>
+          </form>
+          
+          <div class="contact-info" id="contactInfo">
+            <h3>Get in Touch</h3>
+            <p>Available for opportunities, collaborations, and conversations about engineering.</p>
+            <div class="info-row">
+              <span class="info-icon">✉</span>
+              <a href="mailto:seemab.ramzan@gmail.com">seemab.ramzan@gmail.com</a>
+            </div>
+            <div class="info-row">
+              <span class="info-icon">📱</span>
+              <span class="info-text">+92-3461261818</span>
+            </div>
+            <div class="info-row">
+              <span class="info-icon">📍</span>
+              <span class="info-text">Islamabad, Pakistan</span>
+            </div>
+            <div class="info-row">
+              <span class="info-icon">in</span>
+              <a href="https://linkedin.com/in/SeemabRamzan" target="_blank" rel="noopener noreferrer">linkedin.com/in/SeemabRamzan</a>
+            </div>
+            <div class="info-row">
+              <span class="info-icon">⬡</span>
+              <a href="https://github.com/seemab" target="_blank" rel="noopener noreferrer">github.com/seemab</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="logo">SR</span>
+    <p>Seemab Ramzan · Electrical Engineer</p>
+    <p class="footer-quote">"Engineering intelligence into every system."</p>
+    <div class="footer-icons">
+      <a href="https://github.com/seemab" target="_blank" rel="noopener noreferrer">⬡ GitHub</a>
+      <a href="https://linkedin.com/in/SeemabRamzan" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
+      <a href="mailto:seemab.ramzan@gmail.com">✉ Email</a>
+    </div>
+    <p class="copyright">&copy; 2026 Seemab Ramzan. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Custom JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
