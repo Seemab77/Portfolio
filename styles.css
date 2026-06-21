@@ -1807,64 +1807,8 @@ footer p {
   }
 }
 
-@media (max-width: 1100px) {
-  .hero-container {
-    gap: 2.5rem;
-  }
-  .about-grid {
-    gap: 3rem;
-  }
-  .contact-grid {
-    gap: 2.5rem;
-  }
-}
-
-@media (max-width: 968px) {
-  nav {
-    padding: 1.25rem 2.5rem;
-  }
-  nav.scroll-scrolled {
-    padding: 0.8rem 2.5rem;
-  }
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 3.5rem;
-  }
-  .hero-widget {
-    max-width: 500px;
-    margin: 0 auto;
-    width: 100%;
-  }
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 4rem;
-  }
-  .about-illustration {
-    position: static;
-    margin-top: 2rem;
-  }
-  .exp-card {
-    grid-template-columns: 1fr;
-  }
-  .exp-left {
-    padding: 2.5rem;
-  }
-  .exp-right {
-    padding: 2.5rem;
-  }
-  .stats-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  .modal-body {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 992px) {
+@media (max-width: 1150px) {
+  /* Navigation Bar Overrides */
   .custom-cursor {
     display: none;
   }
@@ -1921,6 +1865,45 @@ footer p {
     transform: rotate(-45deg) translate(5px, -7px);
   }
 
+  /* Grid Layouts to stack */
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .hero-widget {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .about-illustration {
+    position: static;
+    margin-top: 2rem;
+  }
+  .exp-card {
+    grid-template-columns: 1fr;
+  }
+  .exp-left {
+    padding: 2.5rem;
+  }
+  .exp-right {
+    padding: 2.5rem;
+  }
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-body {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  /* Section Spacing */
   section {
     padding: 5rem 0;
   }
@@ -2211,8 +2194,8 @@ footer p {
   color: #f1f5f9;
 }
 
-/* RESPONSIVE OVERRIDES FOR CAPSTONE */
-@media (max-width: 992px) {
+/* RESPONSIVE OVERRIDES FOR CAPSTONE & COMPREHENSIVE MOBILE RESPONSIVENESS */
+@media (max-width: 1150px) {
   .fyp-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -2220,9 +2203,236 @@ footer p {
 }
 
 @media (max-width: 576px) {
+  /* Global Container Adjustments */
+  .container {
+    padding: 0 1.25rem !important;
+  }
+  
+  /* Navigation Bar Adjustments */
+  nav, nav.scroll-scrolled {
+    padding: 0.8rem 1.25rem !important;
+  }
+  .nav-links {
+    top: 58px !important;
+    padding: 2.5rem 1.5rem !important;
+    gap: 1.25rem !important;
+  }
+  
+  /* Section Padding */
+  section {
+    padding: 4rem 0 !important;
+  }
+  
+  /* Hero Section Adjustments */
+  #hero {
+    padding: 6.5rem 1.25rem 2.5rem !important;
+  }
+  #hero h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+  }
+  .hero-designations {
+    font-size: 1.05rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .hero-intro {
+    font-size: 0.95rem !important;
+    margin-bottom: 2rem !important;
+  }
+  .cta-group {
+    justify-content: center;
+    gap: 0.75rem !important;
+    margin-bottom: 2.5rem !important;
+  }
+  .cta-group .btn-primary,
+  .cta-group .btn-outline {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.88rem !important;
+    text-align: center;
+    flex-grow: 1;
+    max-width: 180px;
+  }
+  .social-icons {
+    justify-content: center;
+    gap: 1.5rem !important;
+  }
+  
+  /* ESP32 Terminal Widget */
+  .hero-widget {
+    height: 330px !important;
+  }
+  .terminal-body {
+    padding: 1rem !important;
+    font-size: 0.78rem !important;
+    gap: 0.5rem !important;
+  }
+  .terminal-input-row {
+    padding: 0.6rem 1rem !important;
+  }
+  
+  /* About Section & Avatar */
+  .about-avatar {
+    width: 160px !important;
+    height: 160px !important;
+  }
+  .about-avatar::after {
+    inset: -6px !important;
+  }
+  .about-text p {
+    font-size: 0.98rem !important;
+    line-height: 1.7 !important;
+  }
+  
+  /* Experience Timeline */
+  .exp-left {
+    padding: 1.75rem 1.5rem !important;
+  }
+  .exp-right {
+    padding: 1.75rem 1.5rem !important;
+  }
+  .exp-right h4 {
+    margin-top: 1rem !important;
+  }
+  
+  /* Education Card */
+  .edu-card {
+    padding: 1.75rem 1.5rem !important;
+    gap: 1.25rem !important;
+  }
+  .edu-icon {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 1.8rem !important;
+    border-radius: 12px !important;
+  }
+  .edu-info h3 {
+    font-size: 1.35rem !important;
+  }
+  
+  /* Projects, Skills, Certificates, Achievements Grids */
+  .projects-grid,
+  .skills-grid,
+  .cert-grid,
+  .achieve-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .proj-header {
+    padding: 1.25rem 1.5rem !important;
+  }
+  .proj-body {
+    padding: 1.5rem !important;
+  }
+  .proj-body p {
+    margin-bottom: 1.25rem !important;
+  }
+  .tech-tags {
+    margin-bottom: 1.25rem !important;
+  }
+  
+  .skill-cat,
+  .cert-card,
+  .achieve-card {
+    padding: 1.75rem 1.25rem !important;
+  }
+  
+  /* Achievements Stats Box */
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    margin-bottom: 2.5rem !important;
+  }
+  .stat-box {
+    padding: 1.5rem 1rem !important;
+  }
+  .stat-num {
+    font-size: 2.4rem !important;
+  }
+  .stat-label {
+    font-size: 0.72rem !important;
+  }
+  
+  /* Capstone FYP Section */
   .fyp-stats {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .fyp-stat-box {
+    padding: 1rem !important;
+  }
+  .fyp-stat-num {
+    font-size: 1.75rem !important;
+  }
+  .fyp-highlight-card {
+    padding: 1.25rem !important;
+  }
+  .fyp-interactive-col {
+    gap: 1rem !important;
+  }
+  
+  /* Contact Form & Info */
+  .contact-form,
+  .contact-info {
+    padding: 1.75rem 1.25rem !important;
+  }
+  .form-title,
+  .contact-info h3 {
+    font-size: 1.4rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .field-wrap {
+    margin-bottom: 1.75rem !important;
+  }
+  
+  /* Project Details Modal */
+  .project-modal {
+    padding: 1.5rem !important;
+    width: 95% !important;
+    max-height: 90vh !important;
+  }
+  .modal-close {
+    top: 1rem !important;
+    right: 1rem !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1.5rem !important;
+  }
+  .modal-header {
+    padding-bottom: 1rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .modal-header h3 {
+    font-size: 1.4rem !important;
+  }
+  .modal-body {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Footer adjust */
+  footer {
+    padding: 3rem 1.25rem !important;
+  }
+  .footer-icons {
+    gap: 1.25rem !important;
+    margin: 1.25rem 0 1.75rem !important;
+  }
+  .footer-icons a {
+    font-size: 0.82rem !important;
+  }
+}
+
+@media (max-width: 400px) {
+  #hero h1 {
+    font-size: 1.85rem !important;
+  }
+  .stats-row {
+    grid-template-columns: 1fr !important;
+  }
+  .cta-group .btn-primary,
+  .cta-group .btn-outline {
+    max-width: 100% !important;
+    width: 100% !important;
   }
 }
 
